@@ -88,9 +88,9 @@
 
 ## import from命令
 + import可以加载用export暴露的接口(必须)
-	`import { a,b,c } from './abc.js //.js可以省略'`
+	* `import { a,b,c } from './abc.js //.js可以省略'`
 + import也可以重命名
-`import { a as a' } from './abc'` 
+  * `import { a as a' } from './abc'` 
 + import后面的from指定模块文件的位置，也可以是相对/绝对路径,'.js'可以省略，如果只是模块明，没有路径，那么就必须有配置文件来告诉js引擎模块的位置。
 + 不能使用逻辑，表达式来引入模块
 + import具有提升效果，会在执行程序之前执行

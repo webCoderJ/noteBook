@@ -8,6 +8,7 @@
 + react允许把代码封装为一个组件，然后像插入普通HTML标签一样，在网页中插入这个组件
 	1. 方法 -> `React.createClass();`
 	2. eg:
+	
 		```js
 			var HelloMessage = React.createClass(
 				render:function(){
@@ -21,6 +22,7 @@
 				document.getElementById('react')
 			)
 		```
+		
 3.  注意点：
 	+ 所有的组件都必须要有个render方法，用于输入组件
 	+ 组件的第一个字母必须大写，否则会报错
