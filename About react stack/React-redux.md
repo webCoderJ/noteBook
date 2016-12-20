@@ -44,11 +44,11 @@
 > 
 + react-redux 将所有store传给顶层Provider组件，那么所有的子组件就可以通过单向数据流获得数据。
 + 容器组件必须使用Provider来包裹，子组件才能获得connect生成的数据。
-		```
-			render(
-				  <Provider store={store}>
-				    <App />
-				  </Provider>,
-				  document.getElementById('root')
-				)
-	```	
+```
+	render(
+		  <Provider store={store}>
+		    <App />
+		  </Provider>,
+		  document.getElementById('root')
+		)
+```	

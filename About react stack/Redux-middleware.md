@@ -2,23 +2,23 @@
 
 ## redux-logger
 > 
-+ `import { applyMiddleware,createStore } from 'redux'`
-+ `import createLogger from 'redux-logger';`
-+ `const logger = createLogger`;
-```
-	//使用createStore方法创建store的时候使用传入applyMiddleware方法使用中间件。
-	const store = createStore(reducer,applyMiddleware(logger))
-``` 
-+ 注意点
-	+ createStore方法可以接收震哥应用的出事状态作为参数，那么`applyMiddleware()`就变为createStore的第三个参数。
-```
-	const store = createStore(reducer,initialState,applyMiddleware(logger))
-```
-	+ 中间件的次序很重要！
-```
-	// applyMiddleware可以传入多个中间件，但是传入的时候要讲究先后顺序，使用前要查阅文档，比如logger一定要放在最后才能正确执行。
-	const store = createStore(reducer,initialState,applyMiddleware(thunk,promise,logger))
-```
+	+ `import { applyMiddleware,createStore } from 'redux'`
+	+ `import createLogger from 'redux-logger';`
+	+ `const logger = createLogger`;
+	```javascript
+		//使用createStore方法创建store的时候使用传入applyMiddleware方法使用中间件。
+		const store = createStore(reducer,applyMiddleware(logger))
+	``` 
+	+ 注意点
+		+ createStore方法可以接收震哥应用的出事状态作为参数，那么`applyMiddleware()`就变为createSt
+	```
+		const store = createStore(reducer,initialState,applyMiddleware(logger))
+	```
+		+ 中间件的次序很重要！
+	```
+		// applyMiddleware可以传入多个中间件，但是传入的时候要讲究先后顺序，使用前要查阅文档，比如logger一定要放在最后才能正确执行。
+		const store = createStore(reducer,initialState,applyMiddleware(thunk,promise,logger))
+	```
 
 ## 异步操作的基本思路
 > 
@@ -75,20 +75,20 @@ const store = createStore(reducer,applyMiddleware(promiseMiddle))
 
 ## compose函数执行推测
 >
-+ 返回一个可接受参数的方法
++ 	返回一个可接受参数的方法
 	1. var caller = compose(...funcs); //会按照传入的顺序执行。
 	2. caller(createStore)
 	3. 最终返回的是效果是洋葱剖面函数：
-```
-const configureStore = function(initialState) {
-    return createStore(reducer, initialState || [], applyMiddleware(thunk, logger()))
-}
-
-var finalCreateStore = compose(applyMiddleware(thunk, logger()))(createStore);
-
- var configureStore = function(initialState) {
-   initialState = initialState || {todos: []}
-   return finalCreateStore(reducer, initialState);
+```javascript
+    const configureStore = function(initialState) {
+        return createStore(reducer, initialState || [], applyMiddleware(thunk, logger()))
+    }
+    
+    var finalCreateStore = compose(applyMiddleware(thunk, logger()))(createStore);
+    
+    var configureStore = function(initialState) {
+       initialState = initialState || {todos: []}
+       return finalCreateStore(reducer, initialState);
  };
 ```
 	

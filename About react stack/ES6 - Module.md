@@ -4,7 +4,7 @@
 
 ## 严格模式
 	+ ES6的模块自动采用严格模式，不管有没有在模块头部记上`use strict`
-		- 变量必须声明再使用，ES5中如果变量不声明就自动变成了全局变量。
+		- 变量必须声明再使用，ES5中如果变量不声明就自动变成了全局变量
 		- 函数不能有同名的属性，否则会报错
 		- 不能使用with语句
 		- 不能对只读属性赋值
@@ -31,23 +31,23 @@
 		export {firstName, lastName, year}; //推荐使用
 	```
  + 可输出函数或类
-```javascript
-	export function multiply(x, y) {
-	  return x * y;
-	};
-	--------
-	//通常情况下，export输出的变量就是本来的名字，但是可以使用as关键字重命名。可输出多次。
-	function v1() { ... }
-	function v2() { ... }
+	```javascript
+		export function multiply(x, y) {
+		  return x * y;
+		};
+		--------
+		//通常情况下，export输出的变量就是本来的名字，但是可以使用as关键字重命名。可输出多次。
+		function v1() { ... }
+		function v2() { ... }
 
-	export {
-	  v1 as streamV1,
-	  v2 as streamV2,
-	  v2 as streamLatestVersion
-	};	
-```
+		export {
+		  v1 as streamV1,
+		  v2 as streamV2,
+		  v2 as streamLatestVersion
+		};	
+	```
  + 错误的输出
-```
+```javascript
 	// 报错
 	export 1;
 
@@ -71,24 +71,24 @@
 	var n = 1;
 	export {n as m};
 
-	function fn(){}
+	function fn(){};
 	exports { fn }
 ```
 + export输出的是动态值，这一点与CommonJS规范完全不同。CommonJS模块输出的是值的缓存，不存在动态更新。
-```
-	exports var m = 'now'
-	setInterval(() => m += 'then',500)
-```
+	```javascript
+		exports var m = 'now'
+		setInterval(() => m += 'then',500)
+	```
 + export可出现在模块的任何位置，不过要处于模块顶层。不然会报错
-```
-	function fn(){
-		export default 'bar'
-	}
-```
+	```javascript
+		function fn(){
+			export default 'bar'
+		}
+	```
 
-## import  from命令
+## import from命令
 + import可以加载用export暴露的接口(必须)
-`import { a,b,c } from './abc.js //.js可以省略'`
+	`import { a,b,c } from './abc.js //.js可以省略'`
 + import也可以重命名
 `import { a as a' } from './abc'` 
 + import后面的from指定模块文件的位置，也可以是相对/绝对路径,'.js'可以省略，如果只是模块明，没有路径，那么就必须有配置文件来告诉js引擎模块的位置。
@@ -96,23 +96,23 @@
 + import具有提升效果，会在执行程序之前执行
 + import一旦加载完成，就会缓存起来，再次import相同的模块时，会读取缓存的内容。
 + 模块的整体加载
-	```javascript
-		// circle.js
-		export function area(radius) {
-		  return Math.PI * radius * radius;
-		}
-		export function circumference(radius) {
-		  return 2 * Math.PI * radius;
-		}
+```javascript
+	// circle.js
+	export function area(radius) {
+	  return Math.PI * radius * radius;
+	}
+	export function circumference(radius) {
+	  return 2 * Math.PI * radius;
+	}
 
-		//可以使用逐一加载的方式
-		import { area, circumference } from './circle';
-		//也可采用整体加载的方式
-		import `*` as circle from './circle';
-	```
+	//可以使用逐一加载的方式
+	import { area, circumference } from './circle';
+	//也可采用整体加载的方式
+	import `*` as circle from './circle';
+```
 
 ## export default
-```
+```javascript
 	// export-default.js
 	export default function () {
 	  console.log('foo');
@@ -152,7 +152,7 @@
 	//那么export 也要与之对应
 	export default function(){}
 	export function each (obj,iterator,context){}
-	export {each as for each}
+	export {each as forEach}
 ```
 
 	
