@@ -8,7 +8,8 @@
 + react允许把代码封装为一个组件，然后像插入普通HTML标签一样，在网页中插入这个组件
 	1. 方法 -> `React.createClass();`
 	2. eg:
-	
+	3. fdsa
+
 ```js
 	var HelloMessage = React.createClass(
 		render:function(){

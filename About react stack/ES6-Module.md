@@ -1,5 +1,5 @@
 # ES6 - Module
-import from命令[import](#import)
+
 ## 概述
  + ES6的模块设计思想，是尽量的静态化，是编译是能确定模块的依赖关系，以及输入和输出变量。CommonJS和AMD模块，都只能在运行时确定这些东西。
 
@@ -22,7 +22,7 @@ import from命令[import](#import)
 ## export命令
  + 多种写法
 
-```javascript
+```js
 	export var firstName = 'Michael';
 	export var lastName = 'Jackson';
 	export var year = 1958;
