@@ -9,25 +9,26 @@
 	1. 方法 -> `React.createClass();`
 	2. eg:
 	
-		```js
-			var HelloMessage = React.createClass(
-				render:function(){
-					//this就是这个组件对象，可以通过组件使用传入一些参数
-					return <h1>hello this.props.name<h1/>
-				}
-			);
-			ReactDOM.render(
-				//当一个组件创建完成之后，就可以通过一个类似html的自闭合标签来使用，可以通过属性的方法把值传到组件对象中的props属性中。
-				<HelloMessage name='JIE'/>,
-				document.getElementById('react')
-			)
-		```
+```js
+	var HelloMessage = React.createClass(
+		render:function(){
+			//this就是这个组件对象，可以通过组件使用传入一些参数
+			return <h1>hello this.props.name<h1/>
+		}
+	);
+	ReactDOM.render(
+		//当一个组件创建完成之后，就可以通过一个类似html的自闭合标签来使用，可以通过属性的方法把值传到组件对象中的props属性中。
+		<HelloMessage name='JIE'/>,
+		document.getElementById('react')
+	)
+```
 		
 3.  注意点：
 	+ 所有的组件都必须要有个render方法，用于输入组件
 	+ 组件的第一个字母必须大写，否则会报错
 	+ 组件类只能包含一个顶层标签，否则会报错
 	+ 组件使用时，要注意原生ES的保留字等，比如属性不能只写写class
+
 ```js
 	//这种做法会报错，必须只有一个大容器包裹
 	var HelloMessage = React.createClass(
@@ -40,29 +41,30 @@
 1.
 ## 组件的this.props.children
 1. this.props对象与组件使用时传入的属性一一对应，但有一个例外就是this.props.children属性，他表示组件的所有子节点。
-	```js
-		var React.createClass({
-				render:function(){
-					return (
-							<ol>
-								React.children.map(this.props.children,function(item){
-										return (
-												<li>{ item }<li>
-											)
-									});
-							<ol>
-						)
-				}
-			})
 
-		ReactDOM.render(
-				<NodeList>
-					<span>hello<span>
-					<span>world<span>
-				<NodeList/>,
-				document.getElementById('react')
-			)
-	```
+```js
+	var React.createClass({
+			render:function(){
+				return (
+						<ol>
+							React.children.map(this.props.children,function(item){
+									return (
+											<li>{ item }<li>
+										)
+								});
+						<ol>
+					)
+			}
+		})
+
+	ReactDOM.render(
+			<NodeList>
+				<span>hello<span>
+				<span>world<span>
+			<NodeList/>,
+			document.getElementById('react')
+		)
+```
 	* 注意点
 		1. this.props.children的值有三种，当前组件没有子节点时，返回undefined,如果有一个子节点，数据类型Object，如果有多个子节点，数据类型是Array。
 		2. React提供的迭代方法-> React.children来处理this.props.children。可以使用React.children来遍历子节点，不用担心this.props.children的数据类型。
@@ -81,7 +83,7 @@
 ## this.state
 React的一大创新，就是将组件看成一个状态机，一开始有一个初始状态 --> 用户互动 --> 状态变化 --> 重绘UI
 
-```jsx
+```js
 	var LikeButton = React.createClass({
 	  getInitialState: function() {
 	    return {liked: false};
@@ -120,6 +122,7 @@ React的一大创新，就是将组件看成一个状态机，一开始有一个
 	+ componentWillRecieveProps(obj ,nextProps) -> 已加载组件收到新的参数时调用
 	+ shouldComponentUpdata(obj,nextProps,nextState) -> 组件判断是否重新渲染时调用
 4. eg
+
 ```javascript
 		var Hello = React.createClass({
 	  getInitialState: function () {

@@ -26,12 +26,13 @@
 + `import{ connect } from 'react-redux'`
 +  `const ContainerComponent = connect()(UiComponent)`
 +  为容器组件输入逻辑(外部的数据 -> state对象);
-	+  `mapStateToProps(function(state)) //返回一个对象`
-	+  `var mapStateToProps = function (state) { return state;};`
+	- `mapStateToProps(function(state)) //返回一个对象`
+	-	`var mapStateToProps = function (state) { return state;};`
 +  为容器添加actions，让UI组件具有输出逻辑
 	+  `mapDispatchToProps = function(state,[ownProps -> 容器组件自己的props])) //返回一个对象`
 	+  `mapDispatchToProps = {} //可以直接等于一个对象，那么就不能传入逻辑参数，具体根据需求使用以上两种方式`
-	```
+
+	```js
 		var mapDispatchToProps = function (dispatch) {
 		  return {
 		    actions: bindActionCreators(actions, dispatch) //将action和dispatch绑定在一起，子组件可以直接调用这个方法，就可发出一个action。
