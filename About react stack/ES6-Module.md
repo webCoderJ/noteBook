@@ -19,8 +19,8 @@
 	* 不能使用`fn.caller & fn.arguments`获取函数调用的堆栈
 	* 增加了保留字 eg：`protected statis interface`
 
-## export命令
- + 多种写法
+## export
++ 多种写法
 
 ```js
 	export var firstName = 'Michael';
@@ -32,7 +32,7 @@
 	var year = 1958;
 	export {firstName, lastName, year}; //推荐使用
 ```
- + 可输出函数或类
++ 可输出函数或类
 
 ```javascript
 	export function multiply(x, y) {
