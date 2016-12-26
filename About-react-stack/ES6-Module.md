@@ -18,7 +18,7 @@
 	* 禁止 `this` 指向全局对象
 	* 不能使用`fn.caller & fn.arguments`获取函数调用的堆栈
 	* 增加了保留字 eg：`protected statis interface`
-
+	
 ## export
 + 多种写法
 
@@ -119,7 +119,7 @@
 ```
 
 ## export default
-```javascript
+```js
 	// export-default.js
 	export default function () {
 	  console.log('foo');
