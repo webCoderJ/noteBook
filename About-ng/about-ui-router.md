@@ -63,7 +63,7 @@ angular.module('app', ['ui.router'])
 
     }
 
-    controllerAs,
+    controllerAs，//为控制器起一个别名
 
     controllerProvider:function(stateParams){ //写入一些逻辑来判断是哪个controller
       stateParams,//可以获取到url中传递的参数
