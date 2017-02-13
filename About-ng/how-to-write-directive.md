@@ -42,6 +42,12 @@
         attr: //指令上的data-attrs
       }
 
+      //与link互斥，如果设置了compile，link将会被忽略，会将compile返回的函数作为link函数
+      //compile会在link函数之前就执行
+      compile:function(){
+
+      }
+
       controller:string/func //指令的link和controller可以互换？
         string//回去查找注册在app中的控制器
         function($scope,$element,$attrs,$transclude){
@@ -49,8 +55,6 @@
           $transclude,//特殊的注入服务，
                       //嵌入链接函数会与对应的嵌入作用域进行绑定
                       //用于操作实际被执行的用来clone元素和操作DOM
-                      //
-
         }
 
       controllerAs,//设置控制器的别名
@@ -62,7 +66,7 @@
               //require 会将控制器注入到其值所指定的指令中
               //并作为当前指令的链接函数的第四个参数
               //前缀修饰
-                ？//如果在当前指令中没有找到所需要的控制器,会将 null 作为传给 link 函数的第四个参数。
+                ？//如果在当前指令的元素中没有找到所需要对应指令的的控制器,会将 null 作为传给 link 函数的第四个参数。
                 ^ //如果添加了 ^ 前缀,指令会在上游的指令链中查找 require 参数所指定的控制器。
                 ?^//将前面两个选项的行为组合起来,我们可选择地加载需要的指令并在父指令链中进行查找。如果没有前缀,指令将会在自身所提供的控制器中进行查找，如果没有找到任何控制器就抛出一个错误。
 
