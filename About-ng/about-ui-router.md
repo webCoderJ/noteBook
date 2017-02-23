@@ -20,7 +20,7 @@ angular.module('app', ['ui.router'])
 
     onExit,       //退出路由的钩子
 
-    views, Obj       //一旦有这个字段，那么说明这个路由是多视图路由，template,templateUrl,url将会被忽略
+    views, Obj       //一旦有这个字段，那么说明这个路由是多视图路由,template,templateUrl,url将会被忽略
       views:{ 
         '模板容器的名字@父stateName':{
           template:''

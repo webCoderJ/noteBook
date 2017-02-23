@@ -6,6 +6,8 @@
 	
 ## git reset 版本回退
 	+ `HEAD file` 将添加到暂存区的file撤销(unstage)
+	+ `git reset --soft + log` 撤销上次提交，回到add状态
+	+ `git reset --hard + log` 撤销上次提交，删除上次修改	
 	
 ## git rm 文件删除
 
@@ -37,3 +39,4 @@
 
 ## git特殊命令
 	1. `git log --graph --pretty=oneline --abbrev-commit` 查看分支情况
+

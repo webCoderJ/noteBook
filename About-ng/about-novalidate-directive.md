@@ -10,6 +10,12 @@
   3. `ng-patern` -> 为当前元素添加一个正则验证规则。
   4. `ng-disabled` -> 禁用当前元素，可以配合表单错误对象使用。
 
++ angular会自动根据表单状态设置对应的class
+ 1. 表单合法时 - ng-valid
+ 2. 表单不合法时 - ng-invalid
+ 3. 表单未修改时 - ng-pristine
+ 4. 表单已经修改 - ng-dirty
+
 + 自定义验证
 
 ```js
