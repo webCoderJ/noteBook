@@ -10,7 +10,7 @@
 ## redux-dev-tool
 >	
 	+ 开发调试工具 `redux-devtools`
-	+ 应用无刷新保存工具 `hot-loader`
+	+ 应用无刷新保存工具 `hot-loader` 
  
 ## Redux Store
 > 
