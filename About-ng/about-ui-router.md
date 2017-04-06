@@ -76,4 +76,29 @@ angular.module('app', ['ui.router'])
 ```js
 //常用事件与方法
 $state.go('stateName'[,paramas][,option])
+
+.state('market.subpage', {
+    // params字段可以接收url字段中设定好的参数外的参数
+    // 没有在params字段设定的可以在url字段中使用:接收参数
+    params: {
+        customerInfo: null
+    },
+    url: '/market/:subpage:?search'
+  })
+
+  // 传值到params
+   $state.go('market.subpage', {
+      subpage: 'list',
+      customerInfo: cell.user_name
+  });
+
+  // 传值的第二种方法
+  var url = $state.href('market.subpage', {
+      subpage: 'list',
+      search: cell.user_name
+  }) //url = #/market/list
+
+  $state.href()
+  // 会设定好传入的参数并返回一个可供window.open()跳转的url 用于新标签打开带参数页面
+  window.open(url, '_blank');
 ```
