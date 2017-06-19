@@ -1,5 +1,6 @@
-主要特性：
+### About pm2
 
+主要特性：
 内建负载均衡（使用Node cluster 集群模块）
 后台运行
 0秒停机重载，我理解大概意思是维护升级的时候不需要停机.
@@ -22,7 +23,7 @@ $ pm2 start app.js -i 4 #后台运行pm2，启动4个app.js
 $ pm2 start app.js --name my-api # 命名进程
 $ pm2 list               # 显示所有进程状态
 $ pm2 monit              # 监视所有进程
-$ pm2 logs               #  显示所有进程日志
+$ pm2 logs               # 显示所有进程日志
 $ pm2 stop all           # 停止所有进程
 $ pm2 restart all        # 重启所有进程
 $ pm2 reload all         # 0秒停机重载进程 (用于 NETWORKED 进程)
