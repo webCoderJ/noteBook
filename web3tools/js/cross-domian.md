@@ -30,6 +30,7 @@ $.getJSJON('http://www.tigerwit.com/data.php?callback=?',function(jsonData){
 5. 服务器通过修改Allow-cross-origin字段来同意跨域
     + 会有option预请求
     + Allow-cross-origin只可以设置两个（* || 某一个域名）
+    + 前端需要在发送请求时候设置 withcredentail: true
 ```
 
 
