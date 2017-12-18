@@ -4,7 +4,7 @@
 
 ```javascript
     var path = require('path');
-    var str = path.mormalize('./path//upload//data/index.html);
+    var str = path.mormalize('./path//upload//data/index.html')
     // /path/upload/data/index.html
 ```
 
