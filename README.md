@@ -1,2 +1,3 @@
-# this is my learning note
-if you feel this is helpful,you can use `git clone` to download my notes whitout any fee!
+# 个人学习杂记
+都是个人在工作、学习中随意记下的一些笔记，很杂乱，很浅显~
+如果有幸有小伙伴觉得这个笔记有任何一点帮助的话，请随意转载查看！
