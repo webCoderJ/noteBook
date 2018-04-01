@@ -72,7 +72,6 @@ angular.directive('myD',function(){
                         return undefined;
                     }
                 });
-
             }
         };
     }

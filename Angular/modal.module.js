@@ -1,3 +1,6 @@
+/**
+ * 实现一个弹窗模块
+ */
 export default angular.module('app.modal', [])
     .factory('$$stackedMap', function () {
         return {
