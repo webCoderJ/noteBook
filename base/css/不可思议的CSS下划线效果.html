@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>不可思议的CSS下划线效果</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				margin: 0px;
+				overflow: hidden;
+			}
+			a {
+				color:#0078ff;
+			}
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				display: inline-block;
+				list-style: none;
+				margin: 0 auto;
+			}
+			li {
+				float: left;
+				padding: 5px 10px;
+				cursor: pointer;
+				position: relative;
+			}
+			li::before {
+				position: absolute;
+				content: '';
+				display: inline-block;
+				top: 0;
+				height: 100%;
+				border-bottom: 2px solid #000;
+				transition: all 0.33s ease-in-out;
+				/*关键代码*/
+				left: 100%;
+				width: 0%;
+			}
+			li:hover::before {
+				/*关键代码*/
+				width: 100%;
+				left: 0;
+			}
+			/*
+			 * 将当前hover元素的后面的li元素的left设置为 0
+			 * 当鼠标将向右移动时，他的后面的元素left为0，宽度为0
+			 * 当鼠标移动到下一元素时，宽度变化为100%，所以下划线有了从左往右的效果
+			 */
+			li:hover ~ li::before {
+			  left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+		  <li>不可思议的CSS</li>
+		  <li>导航栏</li>
+		  <li>光标小下划线跟随</li>
+		  <li>PURE CSS</li>
+		  <li>Nav Underline</li>
+		</ul>
+	</body>
+</html>
