@@ -22,7 +22,7 @@
 		document.getElementById('react')
 	)
 ```
-		
+
 3.  注意点：
 	+ 所有的组件都必须要有个render方法，用于输入组件
 	+ 组件的第一个字母必须大写，否则会报错
@@ -159,7 +159,7 @@ React的一大创新，就是将组件看成一个状态机，一开始有一个
 	  <Hello name="world"/>,
 	  document.body
 	);
-``` 
+```
 
 
 

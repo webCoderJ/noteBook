@@ -1,4 +1,4 @@
-### cross domain ways
+### Cross Domain Ways
 [跨域](https://www.cnblogs.com/roam/p/7520433.html)
 
 ```js

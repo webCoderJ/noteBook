@@ -50,7 +50,7 @@
 	};	
 ```
  + 错误的输出
- 
+
 ```javascript
 	// 报错
 	export 1;
@@ -163,4 +163,4 @@
 	export {each as forEach}
 ```
 
-	
+​	
