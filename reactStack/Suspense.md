@@ -17,13 +17,12 @@
 render=>start: render
 async=>operation: 请求/异步
 error=>operation: Error: Pomise
-errorStatus=>condition: resolved
+errorStatus=>operation: resolved
 cache=>condition: Cache
 end=>end: End render
 
 render->async->cache
 cache(yes)->end
 cache(no)->error->errorStatus
-errorStatus(yes)->render
-errorStatus(no)->render
+errorStatus(right)->async
 ```
