@@ -43,7 +43,5 @@
 
 - 打包所有插件
 
-- ```shell
-  grunt clean build
-  ```
+- grunt clean build
 
