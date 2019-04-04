@@ -1,3 +1,5 @@
+#### Npm
+
 ```shell
 20ab61ad1c9a7e2e004b42f99db62fdd6bc575254ffe8c0f723aa06420b6cdf1
 
@@ -10,3 +12,14 @@ c1951dd7d8b2e05f217e83f4f79da968cdc99a2972306c4254ffd68a32367733
 c540bd8d024ec372e8adee77a6610fc7c97351a77458320611551f83c52df0e8
 ```
 
+
+
+#### Git
+
+- vscode-setting-gist
+
+  ```text
+  3c175dc06e51a390d67b45990903e1eb4d25067f
+  ```
+
+  
