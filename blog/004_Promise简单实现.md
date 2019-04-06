@@ -1,6 +1,6 @@
 #### Promise简单实现
 
-[参考文章](<https://github.com/xieranmaya/blog/issues/3>)
+> [参考文章](<https://github.com/xieranmaya/blog/issues/3>)
 
 ```javascript
 (() => {
