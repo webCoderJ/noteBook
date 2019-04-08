@@ -1,14 +1,12 @@
 # Redux - middleware使用方法
-  + df
-
 ## redux-logger
-  
+
 ```js
   import { applyMiddleware,createStore } from 'redux';
   import createLogger as logger from 'redux-logger'; 
 	//使用createStore方法创建store的时候使用传入applyMiddleware方法使用中间件。
 	const store = createStore(reducer,applyMiddleware(logger))
-``` 
+```
   + 注意点
     * createStore方法可以接收整个应用的初始状态作为参数，那么`applyMiddleware()`就变为createSt
     
@@ -98,5 +96,5 @@ const store = createStore(reducer,applyMiddleware(promiseMiddle))
        return finalCreateStore(reducer, initialState);
  };
 ```
-	
-	
+
+​	
