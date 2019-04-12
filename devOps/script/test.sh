@@ -1,0 +1,1 @@
+pm2 start C:\script\sign\security.js || exit 1
