@@ -4,16 +4,17 @@
 
 > 由于`elementUI` 的级联选择器暂不支持多选，因此基于`elementUI`开发此组件，所有的样式`class`都是使用 `elementUI` 原样式，基本可无副作用的引入项目使用，有任何问题欢迎发布 `issue`，我会在看到第一时间回复大家。
 > 如果觉得组件还不错的话 不要吝啬你的 `star` 哦~
-- [查看demo](https://webcoderj.github.io/ele-multi-cascader-demo/)
-- [查看demo仓库](https://www.github.com/webcoderj/ele-multi-cascader-demo/)
+- [查看demo](https://webcoderj.github.io/ele-multi-cascader/)
+- [安装](#安装)
+- [文档](#Attributes)
 
-#### 2019-04-19 更新
+#### 2019-04-18 更新
+- 恕我不才，兼容IE的大计就交给你们了，IE可以复制源码，放入webpack环境打包。
 - 修复动态加载中错误警告导致子集无法展开的问题 [#41](https://github.com/webCoderJ/ele-multi-cascader/issues/41) [#47](https://github.com/webCoderJ/ele-multi-cascader/issues/47)
 - 修复选项面板宽度无法自定义/自适应问题 [#44](https://github.com/webCoderJ/ele-multi-cascader/issues/44) [#46](https://github.com/webCoderJ/ele-multi-cascader/issues/46)
-- 新增`panelWidth<Number | String>`选项控制子项面板宽度。
+- 新增`panelWidth<Number | String>`选项控制层级面板宽度。
   - Number - 默认 180
-  - 为String时只可设置唯一值 `auto`，面板会根据内容自动撑开。但不建议这么做，因为数据的长度是未知的。
-- 提高浏览器兼容性
+  - String - 只可设置唯一值 `auto`，面板会根据内容自动撑开。但不建议这么做，因为数据的长度是未知的。
 
 #### 2019-03-27 更新
 - 新增 `clearable` 选项，控制清除全部已选项，同 `elementUI` [#30](https://github.com/webCoderJ/ele-multi-cascader/issues/30)
@@ -52,6 +53,7 @@ npm install ele-multi-cascader
 ```js
 // main.js
 import EleMultiCascader from "ele-multi-cascader"
+import "ele-multi-cascader/dist/cascader.css"
 
 Vue.use(Element)
 Vue.use(EleMultiCascader)
