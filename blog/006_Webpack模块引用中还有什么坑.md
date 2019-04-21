@@ -48,7 +48,7 @@ import eleMultiCascader from "ele-multi-cascader/dist/cascader.umd";
 
 import eleMultiCascader from "ele-multi-cascader";
 
-let eleMultiCascader = require("../node_modules/ele-multi-cascader/dist/cascader.common");
+let eleMultiCascader = require("../node_modules/ele-multi-cascader/dist/cascader.umd");
 
 let eleMultiCascader = require("ele-multi-cascader/dist/cascader.umd");
 
@@ -56,7 +56,7 @@ let eleMultiCascader = require("ele-multi-cascader");
 
 
 // 失败
-import eleMultiCascader from "../dist/cascader.common";
+import eleMultiCascader from "../dist/cascader.umd";
 
 let eleMultiCascader = require("../dist/cascader.umd")
 
