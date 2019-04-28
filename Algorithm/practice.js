@@ -303,8 +303,8 @@ console.time("1-快速排序耗时");
 quickSort(getArr(1000000));
 console.timeEnd("1-快速排序耗时");
 
-function fastSort(arr){
-    if(arr.length <= 1) {
+function fastSort(arr) {
+    if (arr.length <= 1) {
         return arr;
     }
     let left = [];
@@ -312,15 +312,15 @@ function fastSort(arr){
     let midIdx = Math.floor(arr.length / 2);
     let mid = arr.splice(midIdx, 1)[0];
     for (let i = 0; i < arr.length; i++) {
-        if(arr[i] < mid){
-            left.push(arr[i])
+        if (arr[i] < mid) {
+            left.push(arr[i]);
         } else {
-            right.push(arr[i])
+            right.push(arr[i]);
         }
     }
     return fastSort(left).concat([mid], fastSort(right));
 }
 
 console.time("2-快速排序耗时");
-fastSort(getArr(1000000))
+fastSort(getArr(1000000));
 console.timeEnd("2-快速排序耗时");
