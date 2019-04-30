@@ -1,5 +1,7 @@
-function getArr(len = 100) {
-    return new Array(len).fill(0).map(_ => ~~(Math.random() * 1000));
+function swap(arr, left, right) {
+    let tmp = arr[left];
+    arr[left] = arr[right];
+    arr[right] = tmp;
 }
 
 /**
@@ -113,12 +115,6 @@ function bubbleSort4(arr) {
     console.timeEnd("双向冒泡-OPT");
 }
 
-let len = 10000;
-// bubbleSort(getArr(len));  // 210ms
-// bubbleSort2(getArr(len)); // 200ms
-// bubbleSort3(getArr(len)); // 170ms
-// bubbleSort4(getArr(len)); // 160ms
-
 // 选择排序
 function selectionSort(arr) {
     var len = arr.length;
@@ -143,22 +139,40 @@ function selectionSort(arr) {
 // selectionSort(getArr(len));
 
 // 插入排序
-function insertionSort(array) {
-    console.time("插入排序耗时：");
-    for (var i = 1; i < array.length; i++) {
-        var key = array[i];
-        var j = i - 1;
-        while (array[j] > key && j >= 0) {
-            array[j + 1] = array[j];
-            j--;
+function insertionSort(arr) {
+    console.time("插入排序");
+    let len = arr.length;
+    /**
+     * 创建外层指针
+     * 指针向数组末尾移动
+     * 遍历数组所有元素
+     */
+    for (let i = 0; i < len; i++) {
+        /**
+         * 创建指针 j
+         * 指针向前移动，每次递减1
+         * 遍历数组前置元素
+         */
+        let j = i - 1;
+        // 缓存当前值
+        let cur = arr[i];
+        for (j; j > 0; j--) {
+            // 如果当前值较小, 则覆盖当前值(cur)位置，并把较大值往后移动一位
+            if (cur < arr[j]) {
+                arr[j + 1] = arr[j];
+            }
         }
-        array[j + 1] = key;
+        // 位置移动结束，说明前置元素没有比当前元素大，即当前元素为最小值
+        arr[j] = cur;
     }
-    console.timeEnd("插入排序耗时：");
-    return array;
+    console.timeEnd("插入排序");
 }
 
-// 二分插入排序
+/**
+ * 基本思路
+ * 由于一个个往前查询的效率太低，而且前置元素必然是有序序列（因为是从前往后遍历）
+ * 那么查找插入位置的之后可以用二分法，加快查询效率
+ */
 function binaryInsertionSort(arr) {
     console.time("二分插入排序耗时");
     for (var i = 1; i < arr.length; i++) {
@@ -187,64 +201,42 @@ function binaryInsertionSort(arr) {
     console.timeEnd("二分插入排序耗时");
 }
 
-// binaryInsertionSort(getArr(100000));
-
 /**
  * 希尔排序
- * 通过分组插入排序的方式
+ * 可理解为分组插入排序
  *
  * @param {*} arr
  */
-function shellSort1(arr) {
-    console.time("希尔排序耗时1");
-    var len = arr.length,
-        cur;
-    // 分为5等分
-    let gap = 1;
-    while (gap < len / 5) {
-        // 动态定义间隔序列
-        gap = gap * 5 + 1;
-    }
-    for (gap; gap > 0; gap = Math.floor(gap / 5)) {
-        for (let i = gap; i < len; i++) {
-            cur = arr[i];
-            // 准备插入位置
+function shellSort(arr) {
+    console.time("希尔排序耗时");
+    let len = arr.length;
+    let gap = ~~(len / 5);
+    // 动态缩小 gap
+    for (gap; gap > 0; gap = ~~(gap / 5)) {
+        /**
+         * 创建指针 i
+         * 往数组末尾移动
+         * 遍历当前 gap 所有元素
+         */
+        let i = gap;
+        let cur = arr[gap];
+        for (i; i < len; i++) {
+            /**
+             * 创建指针 j
+             * 从当前位置向前移动
+             * 用 当前值 与当前gap 下所有前置元素比较并交换位置
+             * 进行插排
+             */
             let j = i;
-            while (arr[j - gap] > cur && j >= 0) {
-                arr[j - gap] = arr[j];
+            while (arr[j - gap] > cur && j - gap >= 0) {
+                arr[j] = arr[j - gap];
                 j -= gap;
             }
-            // 插入
-            arr[j] = cur;
-        }
-    }
-    console.timeEnd("希尔排序耗时1");
-}
-
-function shellSort(arr) {
-    var len = arr.length,
-        temp,
-        gap = Math.floor(len / 5);
-    console.time("希尔排序耗时");
-    while (gap < len / 5) {
-        // 动态定义间隔序列
-        gap = gap * 5 + 1;
-    }
-
-    for (gap; gap > 0; gap = Math.floor(gap / 5)) {
-        for (var i = gap; i < len; i++) {
-            temp = arr[i];
-            for (var j = i - gap; j >= 0 && arr[j] > temp; j -= gap) {
-                arr[j + gap] = arr[j];
-            }
-            arr[j + gap] = temp;
+            arr[j - gap] = cur;
         }
     }
     console.timeEnd("希尔排序耗时");
-    return arr;
 }
-
-// shellSort(getArr(1000000));
 
 function mergeSort(arr) {
     //采用自上而下的递归方法
@@ -277,50 +269,122 @@ function merge(left, right) {
     return result;
 }
 
-// console.time("归并排序耗时");
-// mergeSort(getArr(1000000));
-// console.timeEnd("归并排序耗时");
-
 function quickSort(array, left, right) {
-    if (left < right) {
-        var x = array[right],
-            i = left - 1,
-            temp;
-        for (var j = left; j <= right; j++) {
-            if (array[j] <= x) {
-                i++;
-                temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+    function sort(array, left, right) {
+        if (left < right) {
+            var x = array[right],
+                i = left - 1;
+            for (j = left; j <= right; j++) {
+                if (array[j] <= x) {
+                    i++;
+                    swap(array, i, j);
+                }
             }
+            sort(array, left, i - 1);
+            sort(array, i + 1, right);
         }
-        quickSort(array, left, i - 1);
-        quickSort(array, i + 1, right);
     }
-    return array;
+
+    console.time("快速排序耗时：");
+    sort(array, left, right);
+    console.timeEnd("快速排序耗时：");
 }
-console.time("1-快速排序耗时");
-quickSort(getArr(1000000));
-console.timeEnd("1-快速排序耗时");
 
 function fastSort(arr) {
-    if (arr.length <= 1) {
-        return arr;
-    }
-    let left = [];
-    let right = [];
-    let midIdx = Math.floor(arr.length / 2);
-    let mid = arr.splice(midIdx, 1)[0];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] < mid) {
-            left.push(arr[i]);
-        } else {
-            right.push(arr[i]);
+    function sort(arr) {
+        if (arr.length <= 1) {
+            return arr;
         }
+        let left = [];
+        let right = [];
+        let midIdx = Math.floor(arr.length / 2);
+        let mid = arr.splice(midIdx, 1)[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < mid) {
+                left.push(arr[i]);
+            } else {
+                right.push(arr[i]);
+            }
+        }
+        return fastSort(left).concat([mid], fastSort(right));
     }
-    return fastSort(left).concat([mid], fastSort(right));
+
+    console.time("ES6-快速排序耗时：");
+    sort(arr);
+    console.timeEnd("ES6-快速排序耗时：");
 }
 
-console.time("2-快速排序耗时");
-fastSort(getArr(1000000));
-console.timeEnd("2-快速排序耗时");
+function heapSort(arr) {
+    /**
+     * 堆化
+     * @param {*} arr 元数据
+     * @param {*} topIndex 数据顶点
+     * @param {*} boundary 堆化边界
+     */
+    function heapify(arr, topIndex, boundary) {
+        let largestIndex = topIndex;
+        let left = 2 * topIndex + 1;
+        let right = 2 * topIndex + 2;
+        if (left < boundary && arr[left] > arr[largestIndex]) {
+            largestIndex = left;
+        }
+        if (right < boundary && arr[right] > arr[largestIndex]) {
+            largestIndex = right;
+        }
+        if (topIndex != largestIndex) {
+            swap(arr, topIndex, largestIndex);
+            heapify(arr, largestIndex, boundary);
+        }
+    }
+
+    // 创建大根堆
+    function buildMaxHeap(arr) {
+        for (let i = ~~(arr.length / 2); i > 0; i--) {
+            heapify(arr, i, arr.length);
+        }
+    }
+
+    console.time("堆排序耗时：");
+    buildMaxHeap(arr);
+    /**
+     * 最后一位跟第一位交换位置
+     */
+    for (let i = arr.length - 1; i > 0; i--) {
+        swap(arr, 0, i);
+        heapify(arr, 0, i);
+    }
+    console.timeEnd("堆排序耗时：");
+}
+
+function countingSort(arr, maxValue) {
+    console.time("计数排序耗时：");
+    let countArray = new Array(maxValue);
+    for (let i = 0; i < arr.length; i++) {
+        if (countArray[arr[i]]) {
+            countArray[arr[i]] = 0;
+        }
+        countArray[arr[i]]++;
+    }
+
+    let sortIndex = 0;
+    for (let j = 0; j < countArray.length; j++) {
+        while (countArray[j] > 0) {
+            arr[sortIndex] = j;
+            countArray[j]--;
+        }
+    }
+    console.timeEnd("计数排序耗时：");
+}
+
+module.exports = {
+    quickSort,
+    fastSort,
+    bubbleSort,
+    selectionSort,
+    insertionSort,
+    binaryInsertionSort,
+    shellSort,
+    mergeSort,
+    heapSort,
+    countingSort
+};
