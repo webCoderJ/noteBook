@@ -228,3 +228,63 @@
         }
     }
 })
+
+class Promise{
+    constructor(excutor){
+        this.state = "pengding";
+        this.value = null;
+        this.reason = null;
+        this.resolveCbs = [];
+        this.rejecteCbs = [];
+
+        function resolve(value){
+            this.state = "resolved";
+            this.value = value;
+        }
+
+        function reject(reson){
+            this.state = "rejected";
+            this.reason = reason;
+        }
+
+        excutor && excutor(resolve, reject);
+    }
+
+    then(resolveFn, rejectFn){
+        let _this = this;
+        resolveFn = typeof rejectFn === 'function' ? rejectFn : function(val){return val};
+        rejectFn = typeof rejectFn === 'function' ? rejectFn : function(reason){return reason};
+
+        if(_this.state === 'resolved'){
+            return (p2 = new Promise((resolve, reject) => {
+                let x = resolveFn();
+                if(x.then){
+                    resolve(x.then);
+                } else {
+                    resolve(x);
+                }
+            }))
+        }
+
+        if(_this.state === 'rejected'){
+            return (p2 = new Promise((resolve, reject) => {
+                let x = resolveFn();
+                if(x.then){
+                    reject(x.then);
+                } else {
+                    reject(x);
+                }
+            }))
+        }
+
+        if(_this.state === 'pending'){
+            _this.resolveCbs.push(
+                function(){
+                    setTimeout(function(){
+                        
+                    }, 0)
+                }
+            )
+        }
+    }
+}
