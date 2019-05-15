@@ -84,13 +84,37 @@ function* gen2() {
 // }
 
 // this
-function* foo(){
-    this.a = 1;
-    this.b = 2;
-    console.log(this)
+// function* foo(){
+//     this.a = 1;
+//     this.b = 2;
+//     console.log(this)
+// }
+
+// let a = foo();
+// console.log(a.next());
+// console.log(a.next());
+// console.log(a.next());
+
+let p1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("p1-resolved");
+    }, 500);
+})
+
+let p2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("p2-resolved")
+    }, 1500);
+})
+
+async function asyncFn1(){
+    let res1 = await p1;
+    console.log(res1);
+    let res2 = await p2;
+    console.log(res2);
+    return "all-resolved"
 }
 
-let a = foo();
-console.log(a.next());
-console.log(a.next());
-console.log(a.next());
+asyncFn1().then(res => {
+    console.log(res);
+})
