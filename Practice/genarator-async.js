@@ -80,3 +80,22 @@ async function all(promises) {
     }
     return results;
 }
+
+function spawn3(genFn){
+    let gen = genFn();
+
+    return (function next(v){
+        return new Promise((resolve, reject) => {
+            try {
+                let result = gen.next(v);
+                if(result.done){
+                    return resolve(result.value);
+                }
+
+                return Promise.resolve(result.value).then(next).then(resolve, reject);
+            } catch (e){
+                reject(e)
+            }
+        })  
+    })()
+}
