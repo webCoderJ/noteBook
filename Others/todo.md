@@ -19,20 +19,22 @@ CSS
   - rem flexable
   - vm vh
 
-webpack
+Webpack
 
 - 各种loader的配置以及项目搭建配置
 
 node
 
-- koa
-- express
-- egg
+- Koa
+- Express
+- Egg
+- MongoDB
+- MySQL
 
 vue
 
 -  router
-- vuex
+- vuex `DONE`
 
 
 
