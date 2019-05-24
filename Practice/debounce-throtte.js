@@ -82,3 +82,56 @@ function throttle(fn, wait) {
         }
     };
 }
+
+
+function debounce_3(fn, wait, immediately) {
+    let context, timer, args
+
+    const later = () => setTimeout(function(){
+        timer = null;
+        fn.apply(context, args);
+    }, wait)
+
+    return function(...args){
+        context = this;
+        if(!timer){
+            if(immediately){
+                timer = later();
+                fn.apply(context, args);
+            }
+        } else {
+            clearTimeout(timer);
+            timer = later();
+        }
+    }
+}
+
+function throttle3(fn, wait){
+    let lastTs, now, remaing, context, result, timer;
+
+
+    return function(...args){
+        now = +new Date();
+        if(!lastTs){
+            lastTs = now;
+            context = this;
+        }
+
+        // 计算距离下次执行时间
+        remaing = wait - (now - lastTs);
+
+        if(remaing <= 0){
+            clearTimeout(timer);
+            result = fn.apply(context, args);
+            lastTs = +new Date();
+        } else {
+            clearTimeout(timer);
+            setTimeout(function(){
+                result = fn.apply(context, args);
+                lastTs = +new Date();
+            }, remaing)
+        }
+
+        return result;
+    }
+}
