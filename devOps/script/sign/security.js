@@ -1,5 +1,5 @@
 const time_range = require('./timeUtil');
-const puppeteer = require('puppeteer');
+const puppeteer = require('./node_modules/puppeteer');
 
 let browser;
 let page;
