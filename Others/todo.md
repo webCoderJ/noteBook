@@ -21,9 +21,9 @@ CSS
 
 Webpack
 
-- 各种loader的配置以及项目搭建配置
+- 各种Loader的配置以及项目搭建配置
 
-node
+Node
 
 - Koa
 - Express
@@ -33,8 +33,8 @@ node
 
 vue
 
--  router
-- vuex `DONE`
+-  Router
+- Vuex `DONE`
 
 
 
