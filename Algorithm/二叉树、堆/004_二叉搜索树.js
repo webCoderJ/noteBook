@@ -63,7 +63,7 @@ class BinarySearchTree {
         prevOrderTraverseNode(this.root, cb);
     }
 
-    // 后序遍历：左侧子节点 => 节点本身 => 右侧子节点
+    // 后序遍历：左侧子节点 => 右侧子节点 => 节点本身
     postOrderTraverse(cb) {
         function postOrderTraverseNode(node, cb) {
             if (node !== null) {
@@ -98,4 +98,59 @@ function binarySearchSort(arr) {
     })
     console.timeEnd("二叉搜索排序: ")
     return result;
+}
+
+class node{
+    constructor(key){
+        this.key = key;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class BinarySearchTree{
+    constructor(){
+        this.root = null;
+    }
+
+    insert(key){
+        let node = new Node(key);
+
+        function insertTo(node, newNode){
+            if(newNode.key < node.key){
+                if(node.left != null){
+                    node.left = newNode; 
+                } else {
+                    insertTo(node.left, newNode)
+                }
+            } else {
+                if(node.right != null){
+                    node.right = newNode; 
+                } else {
+                    insertTo(node.right, newNode)
+                }
+            }
+        }
+
+        if(!this.root){
+            this.root = node;
+        } else {
+           insertTo(this.root, node) 
+        }
+    }
+
+    // 前序遍历
+    inOrderTraverse(cb){
+        function inOrderTraverseNode(node){
+            if(node){
+                cb(node.key);
+                inOrderTraverseNode(node.left);
+                inOrderTraverseNode(node.right);
+            } else {
+                return
+            }
+        }
+
+        inOrderTraverseNode(this.root)
+    }
 }

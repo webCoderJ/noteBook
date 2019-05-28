@@ -90,7 +90,7 @@ Process.nextTick，pronise, setImmediate 的优先级
 32. 实现布局 header,content,footer，上中下布局；当 content 超出窗口可视区，不显示 footer；当 content 没超出可视区时，固定 footer 在最下面
 33. 算法:背包问题、闭包问题、函数柯里化
 34. 宽是高的一半的垂直居中，里面有字体也要垂直居中类数组
-35. promise async set time out 先后次序
+35. promise async settimeout 先后次序
 36. event 类 on once 灯方法
     37.. ==的隐式转化 38.什么是闭包， 39.最长子序列 40.二叉树中序遍历
     41.http 握手原理
