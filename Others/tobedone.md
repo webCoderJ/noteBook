@@ -2,6 +2,7 @@
 2.css 布局
 3.js 原型链继承
 4.fetch 取消
+
 ```js
 /**
  * Fetch https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API
@@ -57,53 +58,103 @@ setTimeout(function(){
 }, 20)
  
 ```
-5. Eventloop
-6. Instanceof
-7. Promise 封装 setstate
-8. redux 基本组成和设计单向数据流
-9. https 协议的过程
-10. https 获取加密密钥的过程
-11. http 的方法有哪几种,每种方法的有用途 
-12. 类式继承的方案
-13. prototype 继承的实现 
-14. 数字千分位处理，正则和非正则都要实现 
-15. 借用构造继承，几种组合继承方式 
-16. 看编程代码说出运行结果：
-Process.nextTick，setImmediate 和 promise.then 的优先级
-Process.nextTick，pronise, setImmediate 的优先级
-17. 实现一个 bind 函数 
-18. 千位加逗号 
-19. 三个继承方式的优缺点 优化列出代码
-20. nodejs 的事件循环
-21. BFC
-22. css 实现正方形 div 水平垂直居中
-23. koa1 的原理,继承 
-<!-- http://www.ruanyifeng.com/blog/2017/08/koa.html -->
-24. 最后是一个写代码 处理有依赖的异步任务 加重试
-25. diff 的原理
-26. es6 箭头函数
-27. import 和 require 的区别
-28. symbol
-29. 函数实现正面模板
-30. 正方形实现，三角形实现
-31. CSS 考了 伪类
-32. 实现布局 header,content,footer，上中下布局；当 content 超出窗口可视区，不显示 footer；当 content 没超出可视区时，固定 footer 在最下面
-33. 算法:背包问题、闭包问题、函数柯里化
-34. 宽是高的一半的垂直居中，里面有字体也要垂直居中类数组
-35. promise async settimeout 先后次序
-36. event 类 on once 灯方法
-    37.. ==的隐式转化 38.什么是闭包， 39.最长子序列 40.二叉树中序遍历
-    41.http 握手原理
-    42.react 新版本的特性
-37. 多空格字符串格式化为数组
-    44、bind 函数运行结果
+5. Eventloop `DONE`
+
+6. Instanceof `DONE`
+
+7. redux 基本组成和设计单向数据流
+
+   1. dispatcher
+   2. action
+   3. reducer
+   4. state
+
+8. https 协议的过程
+
+9. https 获取加密密钥的过程
+
+10. http 的方法有哪几种,每种方法的有用途 
+
+11. prototype 继承的实现 
+
+12. 数字千分位处理，正则和非正则都要实现  `DONE`
+
+13. 借用构造继承，几种组合继承方式 
+
+14. 看编程代码说出运行结果：
+   Process.nextTick，setImmediate 和 promise.then 的优先级
+   Process.nextTick，pronise, setImmediate 的优先级
+
+15. 实现一个 bind 函数 `DONE` 
+
+16. 三个继承方式的优缺点 优化列出代码
+
+17. nodejs 的事件循环 libuv `DONE`
+
+18. BFC `DONE` - 块级格式化上下文
+
+    1. overflow: hidden
+    2. position 不为 staic
+    3. float 不为 none
+    4. display: table-cell、table-caption、inline-block
+
+19. css 实现正方形 div 水平垂直居中
+
+20. koa1 的原理,继承 
+
+21. 最后是一个写代码 处理有依赖的异步任务加重试
+
+22. diff 的原理
+
+23. es6 箭头函数 `DONE`
+
+    1. 没有自己的 this
+    2. 不能当做构造函数
+    3. 不能作为 genarator
+    4. 不能使用 arguments
+
+24. import 和 require 的区别
+
+    |      | Import         | require    |
+    | ---- | -------------- | ---------- |
+    | 规范 | ES6            | CommonJs   |
+    | 输出 | 值的引用       | 值的拷贝   |
+    | 加载 | 编译时输出接口 | 运行时加载 |
+
+25. symbol `DONE` 
+
+26. 函数实现正面模板
+
+27. 正方形实现，三角形实现`DONE` 
+
+28. CSS 考了 伪类
+
+29. 实现布局 header,content,footer，上中下布局；当 content 超出窗口可视区，不显示 footer；当 content 没超出可视区时，固定 footer 在最下面
+
+30. 算法:背包问题、闭包问题、函数柯里化
+
+31. 宽是高的一半的垂直居中，里面有字体也要垂直居中类数组
+
+32. promise async settimeout 先后次序
+
+33. event 类 on once 等方法
+    37.. ==的隐式转化 38.什么是闭包， 
+
+    1. 最长子序列 
+    2. 二叉树中序遍历
+    3. .http 握手原理
+    4. react 新版本的特性 HOOK 
+
+34. 多空格字符串格式化为数组
+    44、bind 函数运行结果 `DONE`
     45、点击 table 的 td 显示 td 内容
-    46、数字千分位处理
     47、固定日期与当前时间格式化处理
     48、上中下三栏布局
     49、实现一个子类实例可以继承父类的所有方法
-38. Jsonp 跨域，js 原型继承 & 原型链，promise，二叉树搜寻算法，算法：前端做并发请求控制
-39. 杭州一面:
+
+35. Jsonp 跨域
+
+36. 杭州一面:
     节流函数
     Koa 中间件机制及代码实现
     React Fiber 原理以及为什么 componentWillRecievedProps 会废弃
@@ -119,11 +170,16 @@ Process.nextTick，pronise, setImmediate 的优先级
     2，redux 异步
     3，redux 异步中间件原理
     4，express koa 中间件原理 56.北京前端一面：
-40. 宏任务微任务
-41. libUV
-42. express ctx 中间键代码实现
-43. vue 发布订阅和虚拟 dom 代码实现
-44. 请实现如下的函数，可以批量请求数据，所有的 URL 地址在 urls 参数中，同时可以通过 max 参数 控制请求的并发度，当所有请求结束之后，需要执行 callback 回调函数。发请求的函数可以直接 使用 fetch 即可
+
+37. 宏任务微任务
+
+38. libUV
+
+39. express ctx 中间键代码实现
+
+40. vue 发布订阅和虚拟 dom 代码实现
+
+41. 请实现如下的函数，可以批量请求数据，所有的 URL 地址在 urls 参数中，同时可以通过 max 参数 控制请求的并发度，当所有请求结束之后，需要执行 callback 回调函数。发请求的函数可以直接 使用 fetch 即可
 
 2 
 1. 主要是围绕你的项目经历和技术，有一定的深度，主要还是要对项目全面熟悉；还有一个就是函数 柯理化的编码实现

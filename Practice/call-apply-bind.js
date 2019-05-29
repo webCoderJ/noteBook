@@ -37,4 +37,11 @@ function test2(num) {
     console.log(this, num);
 }
 
-test2._bind_({ b: 2 })(1, 2, 3);
+test2._bind_({ b: 2 }).bind({c: 1})('...this')
+
+function a(){
+    this.a = "aaa";
+    console.log(this);
+}
+
+a.call({b: 'bbb'})
