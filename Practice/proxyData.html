@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="text">
+    <div id="display"></div>
+    <script>
+        let display = document.getElementById("display");
+        let obj = {
+            input: 1
+        }
+
+        Object.defineProperty(obj, 'input', {
+            configurable: true,
+            enumerable: true,
+            get(value){
+                return 1
+            },
+            set(newValue){
+                display.innerHTML = newValue;
+            }
+        })
+
+        let input = document.getElementById("input");
+        
+        input.value = obj.input
+
+        input.addEventListener('input', function(e){
+            obj.input = e.target.value;
+        })
+    </script>
+</body>
+</html>
