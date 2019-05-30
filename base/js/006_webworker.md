@@ -20,7 +20,7 @@
 
     var computed = computed();
 
-    postMessage(computed) //向主线程传递消息/数据
+    worker.postMessage(computed) //向主线程传递消息/数据
 
   }
 ```
