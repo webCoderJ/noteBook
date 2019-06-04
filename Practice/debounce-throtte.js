@@ -135,3 +135,28 @@ function throttle3(fn, wait){
         return result;
     }
 }
+
+function throttle2(fn, wait){
+    let lastTs, now, timer, cxt;
+
+    return function(...args){
+        cxt = this;
+        now = +new Date();
+
+        let remaing = wait - (now - lastTs);
+
+        if(remaing <= 0){
+            if(timer){
+                clearTimeout(timer);
+            }
+            fn.call(cxt, ...args);
+            lastTs = +new Date();
+        } else {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                fn.call(cxt, ...args);
+                lastTs = +new Date();
+            }, remaing);
+        }
+    }
+}
