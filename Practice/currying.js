@@ -28,3 +28,14 @@ function add(x, y, z) {
 let accmulator = currying(add, 0);
 
 console.log(accmulator(3)(2));
+
+
+function curring(fn, ...args){
+    if(args.length >= fn.length){
+        return fn(...args);
+    } else {
+        return function(...args2){
+            return curring(fn, ...args, ...args2);
+        }
+    }
+}
