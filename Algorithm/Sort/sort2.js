@@ -46,6 +46,17 @@ function insertionSort(arr) {
     }
 }
 
+function shellSort(arr) {
+    let gap = 5;
+    for (; gap > 0; i = Math.floor(gap / 5)) {
+        let i = gap;
+        for (i = gap; i < arr.length; i++) {
+            let j = i;
+            
+        }
+    }
+}
+
 function binarySearch(arr, target) {
     let result = null;
     function find(left, right) {
@@ -66,4 +77,3 @@ function binarySearch(arr, target) {
 }
 
 console.log(binarySearch([1, 2, 4, 6, 8, 10, 11], 4));
-

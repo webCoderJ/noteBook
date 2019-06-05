@@ -27,6 +27,8 @@ Symbol.iterator; // 可遍历结构 Obj[Symbol.iterator] = function* (){ return 
 
 Symbol.hasInstance;
 
+Symbol.toPrimitive; // 隐式转换
+
 class Even {
     static [Symbol.hasInstance](obj) {
         return Number(obj) % 2 === 0;
