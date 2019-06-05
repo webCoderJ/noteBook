@@ -20,11 +20,9 @@ function currying(fn, ...args) {
     };
 }
 
-function add(x, y, z) {
-    return x + y + z;
+function add(x, y, z, a) {
+    return x + y + z + a;
 }
 
 // 累加器
 let accmulator = currying(add, 0);
-
-console.log(accmulator(3)(2));
