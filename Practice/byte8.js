@@ -50,4 +50,4 @@ function transformDate(date) {
     return format(getSec(date));
 }
 
-console.log(transformDate(new Date("2018-11-06 16:59:00")));
+console.log(transformDate(new Date("2019-06-06 16:59:00")));
