@@ -1,7 +1,7 @@
 # React-router
 0. 所谓路由就是加载不同的组件结构
 1. 安装
- + `npm insta;; -S react-router`
+ + `npm install -S react-router`
 2. 引用
 ```js
 	// Router 只是是一个容器组件，要通过route组件来定义
