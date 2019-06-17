@@ -100,7 +100,7 @@ setTimeout(function(){
 
 19. css 实现正方形 div 水平垂直居中
 
-20. koa1 的原理,继承 
+20. koa1 的原理
 
 21. 最后是一个写代码 处理有依赖的异步任务加重试
 
@@ -175,7 +175,7 @@ setTimeout(function(){
 
 38. libUV
 
-39. express ctx 中间键代码实现
+39. express ctx 中间件代码实现
 
 40. vue 发布订阅和虚拟 dom 代码实现
 

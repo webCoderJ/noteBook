@@ -16,9 +16,7 @@ function bubbleSort(arr, opt) {
             let left = arr[j];
             let right = arr[j + 1];
             if (left < right) {
-                var tmp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = tmp;
+                swap(arr, left, right)
             }
         }
     }
@@ -38,9 +36,7 @@ function bubbleSort2(arr) {
         pos = 0;
         for (let j = 0; j < i; j++) {
             if (arr[j] < arr[j + 1]) {
-                tmp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = tmp;
+                swap(arr, j, j + 1)
                 pos = j;
             }
         }
@@ -288,6 +284,23 @@ function quickSort(array, left, right) {
     console.time("快速排序耗时：");
     sort(array, left, right);
     console.timeEnd("快速排序耗时：");
+}
+
+function quickSort(arr, left, right){
+    function sort(arr, left, right){
+        let x = arr[right];
+        let i = left - 1;
+        for(j=left; j<right; j++){
+            if(arr[j] < x){
+                i++;
+                swap(arr, i, j)
+            }
+        }
+        sort(arr, left, i-1);
+        sort(arr, i+1, right);
+    }
+
+    sort(arr, left, right);
 }
 
 function fastSort(arr) {

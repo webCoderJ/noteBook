@@ -42,7 +42,7 @@ function spawn1(genaratorFn) {
 /**
  * 神仙版自动迭代器
  * 递归 + promise 队列
- * @param {} genFn 
+ * @param {} genFn
  */
 function spawn2(genFn) {
     let gen = genFn();
@@ -55,7 +55,9 @@ function spawn2(genFn) {
                     return resolve(result.value);
                 }
 
-                return Promise.resolve(result.value).then(next).then(resolve, reject);
+                return Promise.resolve(result.value)
+                    .then(next)
+                    .then(resolve, reject);
             } catch (error) {
                 reject(error);
             }
@@ -64,7 +66,7 @@ function spawn2(genFn) {
 }
 
 function _async_(args) {
-    return spawn2(function* () {
+    return spawn2(function*() {
         yield 1;
         yield 2;
         yield 3;
@@ -81,21 +83,23 @@ async function all(promises) {
     return results;
 }
 
-function spawn3(genFn){
+function spawn3(genFn) {
     let gen = genFn();
 
-    return (function next(v){
+    return (function next(v) {
         return new Promise((resolve, reject) => {
             try {
                 let result = gen.next(v);
-                if(result.done){
+                if (result.done) {
                     return resolve(result.value);
                 }
 
-                return Promise.resolve(result.value).then(next).then(resolve, reject);
-            } catch (e){
-                reject(e)
+                return Promise.resolve(result.value)
+                    .then(next)
+                    .then(resolve, reject);
+            } catch (e) {
+                reject(e);
             }
-        })  
-    })()
+        });
+    })();
 }
