@@ -9,3 +9,9 @@ function _new(con, ...args){
     obj.__proto__ = con.prototype;
     return con.call(obj, ...args)
 }
+
+function Foo(){
+    return new.target;
+}
+
+console.log(new Foo());
