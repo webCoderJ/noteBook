@@ -16,6 +16,16 @@
 
 // 1. 数组遍历
 function compress(str) {
+    if (!str) return;
+    if (Object.prototype.toString.call(str) != "[object String]") {
+        return new Error("请输入字符类型数据");
+    }
+    if (!/^[A-Za-z]+$/.test(str)) {
+        return new Error("请输入纯英文字母");
+    }
+    if (str.length > 100) {
+        return new Error("请输入长度小于100的纯英文字符");
+    }
     let strArr = String.prototype.toString.call(str).split("");
     let count = 1,
         result = [];
