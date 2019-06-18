@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>float</title>
+    </head>
+    <style>
+        .topDiv {
+            width: 50%;
+            border: 2px solid black;
+            overflow: auto;
+            /* BFC - BFC内部元素不会影响到外部元素渲染，那么属于当前盒子中如果有浮动元素，为了不影响外部元素布局，那么浮动元素会被清除浮动 */
+        }
+        .floatDiv {
+            width: 100px;
+            height: 100px;
+            border: 2px dotted red;
+            color: red;
+            margin: 4px;
+            float: left;
+        }
+        .bottomDiv {
+            width: 50%;
+            height: 100px;
+            margin: 5px 0;
+            border: 2px dotted black;
+        }
+        .textDiv {
+            color: blue;
+            border: 2px solid blue;
+        }
+    </style>
+    <body>
+        <div class="topDiv">
+            <div class="floatDiv">float left</div>
+            <div class="textDiv">
+                Enumerating objects: 23, done. Counting objects: 100% (23/23), done. Delta compression using up to 8 threads Compressing objects: 100% (16/16), done. Writing objects: 100% (16/16)
+            </div>
+        </div>
+        <div class="bottomDiv">
+            Enumerating objects: 23, done. Counting objects: 100% (23/23), done. Delta compression using up to 8 threads Compressing objects: 100% (16/16), done. Writing objects: 100% (16/16), 2.80 KiB | 1.40 MiB/s, done. Total 16 (delta 10), reused 0 (delta 0) remote: Resolving deltas: 100% (10/10), completed with 7 local objects. To https://github.com/webCoderJ/noteBook.git 04fc582..a5ce018 master -> master
+        </div>
+    </body>
+</html>

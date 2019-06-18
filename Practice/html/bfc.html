@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>BFC</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            /* inline-block 边距不会叠加 */
+            /* display: inline-block;  */
+            background: darkcyan;
+            padding: 20px;
+            margin: 20px;
+            color: white;
+            border: 10px solid orange;
+        }
+
+        .border {
+            box-sizing: border-box;
+        }
+
+        .float {
+            float: left;
+        }
+
+        .bfc {
+            overflow: auto;
+            /* float: left|right */
+            /* display: grid|flex|inline-block|table|table-cell|table-caption; */
+            /* position: relative|absolute|fixed -- not-static */ 
+        }
+    </style>
+    <body>
+        <section class="bfc">
+            <div class="border float">
+                box ---- 1
+                <br>numerating objects: 23, done. Counting objects: 100% (23/23), done. Delta compression using up to 8 threads Compressing objects: 100% (16/16), done. Writing objects: 100% (16/16), 2.80 KiB | 1.40 MiB/s, done. Total 16 (delta 10), reused 0 (delta 0) remote: Resolving deltas: 100% (10/10), completed with 7 local objects. To https://github.com/webCoderJ/noteBook.git 04fc582..a5ce018 master -> master
+            </div>
+            <div class="border bfc">
+                box ---- 2
+                <br>numerating objects: 23, done. Counting objects: 100% (23/23), done. Delta compression using up to 8 threads Compressing objects: 100% (16/16), done. Writing objects: 100% (16/16), 2.80 KiB | 1.40 MiB/s, done. Total 16 (delta 10), reused 0 (delta 0) remote: Resolving deltas: 100% (10/10), completed with 7 local objects. To https://github.com/webCoderJ/noteBook.git 04fc582..a5ce018 master -> master
+            </div>
+        </section>
+    </body>
+</html>

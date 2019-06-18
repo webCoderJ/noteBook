@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>BOX-MODEL</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            background: darkcyan;
+            padding: 20px;
+            margin: 20px;
+            overflow: hidden;
+            color: white;
+            border: 10px solid orange;
+        }
+
+        .content {
+            box-sizing: content-box;
+        }
+
+        .border {
+            box-sizing: border-box;
+        }
+    </style>
+    <body>
+        <div class="content">
+            numerating objects: 23, done. Counting objects: 100% (23/23), done. Delta compression using up to 8 threads Compressing objects: 100% (16/16), done. Writing objects: 100% (16/16), 2.80 KiB | 1.40 MiB/s, done. Total 16 (delta 10), reused 0 (delta 0) remote: Resolving deltas: 100% (10/10), completed with 7 local objects. To https://github.com/webCoderJ/noteBook.git 04fc582..a5ce018 master -> master
+        </div>
+
+        <br />
+        <br />
+        <div class="border">
+            numerating objects: 23, done. Counting objects: 100% (23/23), done. Delta compression using up to 8 threads Compressing objects: 100% (16/16), done. Writing objects: 100% (16/16), 2.80 KiB | 1.40 MiB/s, done. Total 16 (delta 10), reused 0 (delta 0) remote: Resolving deltas: 100% (10/10), completed with 7 local objects. To https://github.com/webCoderJ/noteBook.git 04fc582..a5ce018 master -> master
+        </div>
+    </body>
+</html>

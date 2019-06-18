@@ -46,8 +46,4 @@ function compress(str) {
     return result.join("");
 }
 
-console.log(compress("aaabbbbr"));
-
-// hashMap
-// String.fromCharCode(65)
-// 'A'.charCodeAt()
+console.log(compress("aabccccaaa"));

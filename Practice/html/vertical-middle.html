@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>垂直居中</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .center-box {
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            background: darkcyan;
+            padding: 20px;
+            margin: 20px;
+            color: white;
+            border: 10px solid orange;
+        }
+
+        /* 1. flex */
+        .align-center-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 1. table */
+        .align-center-table {
+            display: table;
+        }
+        .align-center-table > div{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        /* 1. grid */
+        .align-center-grid {
+            display: grid;
+            place-items: center;
+        }
+
+        /* 1. absolute */
+        .align-center-absolute {
+            position: relative;
+        }
+        .align-center-absolute > div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+    </style>
+    <body>
+        <div class="center-box align-center-flex">
+            <div>+</div>
+        </div>
+        <div class="center-box align-center-table">
+            <div>+</div>
+        </div>
+        <div class="center-box align-center-grid">
+            <div>+</div>
+        </div>
+        <div class="center-box align-center-absolute">
+            <div>+</div>
+        </div>
+    </body>
+</html>

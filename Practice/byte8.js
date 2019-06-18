@@ -1,3 +1,19 @@
+// 多行文本格式化
+
+// 原码补码反码描述
+
+// table、td事件代理
+
+// 给定时间戳或者日期对象，处理为刚刚、1分钟前、1小时、1天等，并保证可拓展性
+
+// 判断内容和header高度，使footer固定，尽可能多的方法
+
+// Event类的实现
+
+// 千分位处理正则和非正则
+
+// 串联bind运行结果
+
 // 格式化多行字符串
 let str = `aa \v\r dd 1123
 fffn    vv  12fasd fff
@@ -50,3 +66,27 @@ function transformDate(date) {
 }
 
 console.log(transformDate(new Date("2019-06-06 16:59:00")));
+
+function transNumTo3(num = 0) {
+    num = num.toString();
+    let prefix = "";
+    let suffix = "";
+    // 判断小数
+    if (num.includes(".")) {
+        prefix = num.split(".")[0];
+        suffix = num.split(".")[1];
+    } else {
+        prefix = num;
+    }
+
+    let strArr = prefix.split("");
+    for (let i = strArr.length - 3; i > 0; i -= 3) {
+        strArr.splice(i, 0, ",");
+    }
+
+    return strArr.join("") + (suffix ? "." + suffix : "");
+}
+
+function transNumTo3Reg(num = 0){
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/, ",")
+}
