@@ -46,4 +46,9 @@ function compress(str) {
     return result.join("");
 }
 
-console.log(compress("aabccccaaa"));
+console.log(compress2("aabccccaaa"));
+
+// 正则
+function compress2(str) {
+    return str.replace(/([A-Za-z])\1+/g, (...args) => args[1] + args[0].length);
+}

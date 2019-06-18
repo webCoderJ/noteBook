@@ -19,6 +19,6 @@
 
 6. align-self: 单个项目不同的对齐方式
 
-   + ```css
+```css
      auto(根据align-content设置来排列) | flex-start | flex-end | center | baseline | stretch;
-     ```
+```
