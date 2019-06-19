@@ -1,4 +1,4 @@
-[阮一峰 GRID 教程]([http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html](http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html))
+[阮一峰 GRID 教程](http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
 
 #### 容器属性
 

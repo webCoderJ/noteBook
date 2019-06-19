@@ -1,4 +1,4 @@
-## webWorker
+## webWorker - [阮一峰 - webWorker](http://www.ruanyifeng.com/blog/2018/07/web-worker.html)
 
 > 1.`webworker`存在的意义
 > 由于js引擎只能是单线程，HTML5标准中就出现了一个工作线程
@@ -43,3 +43,4 @@
 - XMLHttpRequest -> 可以发出ajax
   
     
+### Worker 新建 Worker可以用于密集运算
