@@ -50,5 +50,8 @@ console.log(compress2("aabccccaaa"));
 
 // 正则
 function compress2(str) {
-    return str.replace(/([A-Za-z])\1+/g, (...args) => args[1] + args[0].length);
+    return str.replace(/([A-Za-z])\1+/g, (...args) => {
+        console.log("TCL: args", args);
+        return args[1] + args[0].length;
+    });
 }
