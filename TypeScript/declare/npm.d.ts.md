@@ -22,7 +22,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "baseUrl"："./",
+    "baseUrl": "./",
     "paths": {
     	"*": ["types/*"]
   	}
