@@ -59,6 +59,7 @@ create = function<T>(length: number, value: T): Array<T>{
     // code
 }
 
+// 泛型之类型推导
 create(1, 'string')
 ```
 

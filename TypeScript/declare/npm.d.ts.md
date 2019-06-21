@@ -47,6 +47,11 @@
 {
   "compilerOptions": {
         "module": "commonjs",
+        "baseUrl": "./",
+        "paths": {
+          "*": ["types/*"]
+        },
+        "module": "commonjs",
         "outDir": "lib", // 编译输出目录
         "declaration": true, // 将 .d.ts 输出到 outDir
     		"declarationDir": "./types", // 声明文件输出目录

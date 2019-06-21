@@ -1,2 +1,4 @@
-[handBook](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/)
-[入门教程](https://ts.xcatliu.com)
+- [入门教程](https://ts.xcatliu.com)
+
+- [HandBook](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/)
+

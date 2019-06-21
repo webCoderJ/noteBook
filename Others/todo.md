@@ -14,15 +14,6 @@
 
 每天两道算法题
 
-CSS
-
-- BFC 
-
-
-Webpack
-
-- 各种Loader的配置以及项目搭建配置
-
 Node
 
 - Koa
@@ -31,10 +22,10 @@ Node
 - MongoDB
 - MySQL
 
-vue
+React
 
--  Router
-- Vuex `DONE`
+- react-redux
+- redux-thunk
 
 
 
