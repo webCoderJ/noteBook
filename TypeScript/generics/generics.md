@@ -63,3 +63,9 @@ create = function<T>(length: number, value: T): Array<T>{
 create(1, 'string')
 ```
 
+#### 泛型类
+```ts
+class ABC<T> {
+    pulibc name: T
+}
+```
