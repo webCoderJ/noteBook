@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        border: darkcyan;
+    }
+</style>
+<body>
+    <div id="div">
+        <button id="btn">clickMe</button>
+    </div>
+</body>
+
+<script>
+    /**
+     * 事件默认发生在事件的冒泡阶段 useCapture = false
+     */
+
+    let useCapture = false;
+    let div = document.getElementById("div");
+    let btn = document.getElementById("btn");
+
+    div.addEventListener("click", function(){
+        console.log("div - click");
+    })
+
+    btn.addEventListener("click", function(){
+        console.log("btn - click");
+    })
+</script>
+</html>

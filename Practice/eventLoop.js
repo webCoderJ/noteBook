@@ -33,7 +33,7 @@
    process.nextTick() 会在每次进入不同阶段的时候检查被执行
 
    setTimeout()和setImmediate()
- */ 
+ */
 
 let p1 = new Promise((resolve, reject) => {
     setTimeout(_ => {
@@ -51,9 +51,9 @@ setTimeout(function() {
     console.log("time-out-0");
 }, 0);
 
-setImmediate(function(){
+setImmediate(function() {
     console.log("setImmediate");
-})
+});
 
 process.nextTick(function() {
     console.log("nextTick");
@@ -64,4 +64,14 @@ new Promise((resolve, reject) => {
     resolve("promise-resolved");
 }).then(res => {
     console.log(res);
+});
+
+// 浏览器 mutationObserver
+
+let observer = new MutationObserver(function() {});
+
+observer.observe(document.getElementById("id"), {
+    attributes: true,
+    childList: true,
+    subtree
 });

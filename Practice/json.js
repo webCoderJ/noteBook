@@ -3,6 +3,6 @@ let obj = {
     prop2: "456"
 }
 
-let json = JSON.stringify(obj, ['prop1'], 4)
+let json = JSON.stringify(obj, null, 4)
 
 console.log(json);
