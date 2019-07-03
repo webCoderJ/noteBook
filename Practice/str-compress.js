@@ -46,8 +46,6 @@ function compress(str) {
     return result.join("");
 }
 
-console.log(compress2("aabccccaaa"));
-
 // 正则
 function compress2(str) {
     return str.replace(/([A-Za-z])\1+/g, (...args) => {
@@ -55,3 +53,11 @@ function compress2(str) {
         return args[1] + args[0].length;
     });
 }
+
+function transNumTo3Reg(num = 0) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/, ",");
+}
+
+let str = "aabccccaaa";
+
+console.log(strCompress(str));

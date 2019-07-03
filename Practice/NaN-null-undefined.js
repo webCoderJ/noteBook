@@ -4,3 +4,5 @@ console.log(typeof null)            // object
 
 console.log(NaN === NaN);           // false
 console.log(Object.is(NaN, NaN));   // true
+
+// NaN 不与任何值相等
