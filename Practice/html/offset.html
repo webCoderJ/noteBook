@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .outter {
+        margin: 50px;
+        width: 200px;
+        height: 200px;
+        background-color: darkcyan;
+        position: relative;
+        left: 200px;
+    }
+
+    .inner {
+        width: 50px;
+        height: 50px;
+        background-color: orange;
+    }
+</style>
+<body>
+    <div class="outter">
+        <div id="inner" class="inner"></div>
+    </div>
+</body>
+<script>
+    let inner = document.getElementById("inner");
+    console.log(inner.getBoundingClientRect());
+    // 上一个定位元素，如果没有则找 table、table-cell、html
+    console.log(inner.offsetLeft, inner.offsetTop);
+</script>
+</html>
