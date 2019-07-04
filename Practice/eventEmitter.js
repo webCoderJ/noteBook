@@ -48,6 +48,5 @@ evtBus.addEvent("FUCK_PM", function(){
 });
 
 setTimeout(_ => {
-    console.log("FUCK_PM");
     evtBus.triggerEvent("FUCK_PM");
 }, 2000);
