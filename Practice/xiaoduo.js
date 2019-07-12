@@ -84,7 +84,7 @@ class BinarySearchTree {
                 }
             }
             parentNodePool = [...curNodePool];
-            if (h % 2 === 0) {
+            if (h % 2 != 0) {
                 result.push(...curNodePool.reverse());
             } else {
                 result.push(...curNodePool);
@@ -104,4 +104,4 @@ for (let i = 0; i < arr.length; i++) {
 
 console.log("TCL: tree", JSON.stringify(tree, "", 2));
 
-console.log(tree.zigzagLevelOrder());
+console.log(tree.zigzagLevelOrder().map(v => v.key));
