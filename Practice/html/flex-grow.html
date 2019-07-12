@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FLEX - GROW</title>
+</head>
+<style>
+     * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        .flex {
+            /* width: 200px;
+            height: 200px; */
+            background: darkcyan;
+            color: white;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        .left {
+            flex-shrink: 0;
+        }
+
+        .right {
+            flex: 1;
+            background: orange;
+            overflow: hidden;
+        }
+</style>
+<body>
+    <div class="flex">
+        <div class="left">
+            left
+        </div>
+        <div class="right">
+                Enumerating objects: 29, done.
+                Counting objects: 100% (29/29), done.
+                Delta compression using up to 8 threads
+                Compressing objects: 100% (15/15), done.
+                Writing objects: 100% (16/16), 2.54 KiB | 2.54 MiB/s, done.
+                Total 16 (delta 10), reused 0 (delta 0)
+                remote: Resolving deltas: 100% (10/10), completed with 10 local objects.
+                To https://github.com/webCoderJ/noteBook.git
+                   4709acb..2285aa4  master -> master
+        </div>
+    </div>
+</body>
+</html>

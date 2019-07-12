@@ -153,4 +153,10 @@ class BinarySearchTree{
 
         inOrderTraverseNode(this.root)
     }
+
+    // 求树的深度
+    getDepth(node){
+        if(!node) return 0;
+        return Math.max(1 + this.getDepth(node.left), 1 + this.getDepth(node.right));
+    }
 }
