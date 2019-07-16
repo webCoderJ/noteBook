@@ -21,6 +21,6 @@
 
 ### 前端
 
--   [Micro frontends](https://www.thoughtworks.com/radar/techniques/micro-frontends)
+-   [Micro FE](https://www.thoughtworks.com/radar/techniques/micro-frontends)
 -   [微前端架构实践](https://tech.meituan.com/2018/09/06/fe-tiny-spa.html)
 
