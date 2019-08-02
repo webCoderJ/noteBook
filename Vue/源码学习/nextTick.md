@@ -22,7 +22,7 @@ export default {
     methods () {
         handleClick () {
             this.test = 'end';
-            console.log(this.$refs.test.innerText);//打印“begin”
+            console.log(this.$refs.test.innerText); //打印“begin”
         }
     }
 }

@@ -15,6 +15,7 @@
 ### TypeSript
 
 -   [HandleBook](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Type%20Compatibility.html)
+-   [深入理解](https://jkchao.github.io/typescript-book-chinese/#why)
 
 ### Vue
 

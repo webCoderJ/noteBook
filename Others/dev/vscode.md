@@ -1,6 +1,8 @@
 ## VSCODE
 
-### Setting
+gistid 82a596623364e6e7629c2d7e5ebe322993c71d5c
+
+## Setting
 
 ```json
 // 将设置放入此文件中以覆盖默认设置

@@ -12,5 +12,5 @@ let proxyObj = new Proxy({}, {
 console.log(proxyObj.a);
 
 let a = {a: 1};
-console.log(Object.getOwnPropertyDescriptor(a, 'a')); 
+console.log(Object.getOwnPropertyDescriptor(a, 'a'));
 //{ value: 1, writable: true, enumerable: true, configurable: true }

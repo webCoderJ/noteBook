@@ -22,3 +22,9 @@
 
 -   [Oh-my-zsh](https://ohmyz.sh/)
 
+- [屏保](https://adesigner.org/2019/03/03/macsaver/)
+
+- [Imageoptim](https://imageoptim.com/mac)
+
+- [gist-笔记本](https://github.com/hackjutsu/Lepton/releases)
+
