@@ -103,3 +103,21 @@ function spawn3(genFn) {
         });
     })();
 }
+
+function spawn4(genFn){
+    let gen = genFn(v);
+    return (function next(){
+        return new Promise((resolve, reject) => {
+            try{
+                let result = gen.next();
+                if(result.done) {
+                    return resolve(result.value);
+                } else {
+                    return Promise.resolve(result.value).then(next).then(resove, reject);
+                }
+            } catch (e) {
+                reject(e);
+            }
+        })
+    }())
+}

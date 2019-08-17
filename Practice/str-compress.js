@@ -61,3 +61,7 @@ function transNumTo3Reg(num = 0) {
 let str = "aabccccaaa";
 
 console.log(strCompress(str));
+
+function transformToK(number){
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/, ",")
+}

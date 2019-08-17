@@ -22,6 +22,24 @@ function _instanceof_(left, right) {
     }
 }
 
+function __instanceof__(left, right) {
+    let target = right.prototype;
+    try{
+        let tmp = left.__proto__;
+        while(true) {
+            if(tmp === null) {
+                return false;
+            }
+            if(tmp === target) {
+                return true
+            }
+
+            tmp = tmp.tmp.__proto__;
+        }
+    } catch (err){
+        return false
+    }
+}
 // _instanceof_([], Array);
 
 console.log(_instanceof_([], Array)); // true
