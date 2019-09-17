@@ -19,6 +19,24 @@
 ```js
   // applyMiddleware可以传入多个中间件，但是传入的时候要讲究先后顺序，使用前要查阅文档，比如logger一定要放在最后才能正确执行。
   const store = createStore(reducer,initialState,applyMiddleware(thunk,promise,logger))
+
+  // src
+  export default function applyMiddleware(...middlewares) {
+    return (createStore) => (reducer, preloadedState, enhancer) => {
+      var store = createStore(reducer, preloadedState, enhancer);
+      var dispatch = store.dispatch;
+      var chain = [];
+
+      var middlewareAPI = {
+        getState: store.getState,
+        dispatch: (action) => dispatch(action)
+      };
+      chain = middlewares.map(middleware => middleware(middlewareAPI));
+      dispatch = compose(...chain)(store.dispatch);
+
+      return {...store, dispatch}
+    }
+  }
 ```
 
 ## 异步操作的基本思路

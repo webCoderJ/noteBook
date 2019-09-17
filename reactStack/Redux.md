@@ -11,7 +11,7 @@
 >	
 	+ 开发调试工具 `redux-devtools`
 	+ 应用无刷新保存工具 `hot-loader` 
- 
+
 ## Redux Store
 > 
 	+ `Store`是保存react状态数据的一个容器，一个应用就只能有一个`Store`
@@ -36,7 +36,6 @@
 	+`combineReducers`用于组合单个reducer，返回一个大的reducer。
 
 ## 监听state的变化
-> 
 + `store.subscribe(listener)`方法可以监听state的变化，可以把它看做一个自定义事件。其中的listener是动作的执行函数。
 + `store.subscribe`会返回一个函数，用于解除监听。
 ```javascript

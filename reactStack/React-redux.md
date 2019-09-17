@@ -1,4 +1,4 @@
-# React - Redux
+React - Redux
 
 ## UI组件的概念
 > 
@@ -52,4 +52,23 @@
 		  </Provider>,
 		  document.getElementById('root')
 		)
-```	
+```
+
+## Compose
+
+```js
+function compose(...funcs){
+  if(funcs.length === 0){
+    return arg => arg
+  }
+  
+  if(funcs.length === 1){
+    return funcs[0]
+  }
+  
+  return funcs.reduce((a, b) => {
+    return (...args) => a(b(...args))
+  })
+}
+```
+

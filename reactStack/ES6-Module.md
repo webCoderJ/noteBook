@@ -5,9 +5,9 @@
 
 ## 严格模式
 + ES6的模块自动采用严格模式，不管有没有在模块头部记上 `use strict`
-	* 变量必须声明再使用，ES5中如果变量不声明就自动变成了全局变量
+	* `变量必须声明再使用`，ES5中如果变量不声明就自动变成了全局变量
 	* 函数不能有同名的属性，否则会报错
-	* 不能使用with语句
+	* `不能使用with语句`
 	* 不能对只读属性赋值
 	* 不能使用前缀0表示八进制数
 	* 不能删除不可删除的属性
@@ -15,7 +15,7 @@
 	* `eval`、`arguments`不能被重新复制
 	* `arguments`不能自动反映函数参数变化
 	* 不能使用`arguments.callee arguments.caller`
-	* 禁止 `this` 指向全局对象
+	* 禁止 `this` 指向全局对象 `!!!`
 	* 不能使用`fn.caller & fn.arguments`获取函数调用的堆栈
 	* 增加了保留字 eg：`protected statis interface`
 	
