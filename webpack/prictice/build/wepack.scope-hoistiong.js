@@ -9,7 +9,7 @@ let PostCSSPluginAutoPrefixer = require("autoprefixer");
 let HtmlWebpackExternalsPlugin = require("html-webpack-externals-plugin");
 
 let config = {
-  mode: process.env.NODE_ENV,
+  mode: 'none',
   devtool: "sourcemap",
   entry: {
     main: "./src/index.js"
@@ -90,6 +90,10 @@ let config = {
       chunkFilename: "[id].css"
     }),
 
+    /* scope-hoising */
+    new webpack.optimize.ModuleConcatenationPlugin(),
+
+    /* 外部插件 */
     new HtmlWebpackExternalsPlugin({
       externals: [
         {

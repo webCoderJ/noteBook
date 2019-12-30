@@ -4,6 +4,7 @@ let { CleanWebpackPlugin } = require("clean-webpack-plugin");
 let HtmlWebpackPlugin = require("html-webpack-plugin");
 let ProgressBarPlugin = require("progress-bar-webpack-plugin");
 let MiniCssExtractPlugin = require("mini-css-extract-plugin");
+let HtmlWebpackExternalsPlugin = require("html-webpack-externals-plugin");
 
 let config = {
   mode: "development",
@@ -11,8 +12,9 @@ let config = {
     contentBase: "./dist",
     hot: true,
     port: 9000,
-    open: false
+    open: true
   },
+  devtool: "eval",
   entry: {
     main: "./src/index.js"
   },
@@ -76,6 +78,23 @@ let config = {
     new MiniCssExtractPlugin({
       // filename: "[name].[contenthash:8].css",
       chunkFilename: "[id].css"
+    }),
+
+    new HtmlWebpackExternalsPlugin({
+      externals: [
+        {
+          module: "react",
+          entry: "https://unpkg.com/react@16.12.0/umd/react.production.min.js",
+          global: "React",
+          append: true
+        },
+        {
+          module: "react-dom",
+          entry: "https://unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js",
+          global: "ReactDOM",
+          append: true
+        },
+      ]
     }),
 
     /* 将打包的文件引用到index.html */
