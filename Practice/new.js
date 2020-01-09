@@ -15,3 +15,9 @@ function Foo(){
 }
 
 console.log(new Foo());
+
+function __new(Ctor, ...args){
+    let obj = {};
+    obj.__proto__ = Ctor.prototype;
+    return Ctor.call(obj, ...args);
+}
