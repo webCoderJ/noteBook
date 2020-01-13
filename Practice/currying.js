@@ -20,6 +20,16 @@ function currying(fn, ...args) {
     };
 }
 
+function curring(fn, ...args) {
+    if(args.length > fn.length){
+        return fn(...args)
+    } else {
+        return function(...rest) {
+            return curring(fn, ...args, ...rest)
+        }
+    }
+}
+
 function add(x, y, z, a) {
     return x + y + z + a;
 }
